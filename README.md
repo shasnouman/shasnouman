@@ -1,3 +1,8 @@
+---open the compiler
+---Load the data
+---Run the code
+---Interpret the results
+
 CREATE TABLE ecommercedataset (
     OrderID INT primary key,
     CustomerID varchar(100),
