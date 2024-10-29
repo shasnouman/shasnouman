@@ -207,20 +207,20 @@ et (2).csv…]()
 
 -- 1. Identify missing values (NULLS)
 SELECT *
-FROM ecommerce-dataset
+FROM ecommerce-dataset(2)
 WHERE OrderDate IS NULL OR Quantity IS NULL OR TotalAmount IS NULL OR Price IS NULL;
 
 -- 2. Flag future-dated entries in the OrderDate field
 SELECT *
-FROM ecommerce-dataset
+FROM ecommerce-dataset(2)
 WHERE OrderDate > CURRENT_DATE;
 
 -- 3. Detect records with unusual Quantity values (values < 0 or > 100)
 SELECT *
-FROM ecommerce-dataset
+FROM ecommerce-dataset(2)
 WHERE Quantity < 0 OR Quantity > 100;
 
 -- 4. Validate TotalAmount by checking if it logically aligns with Quantity * Price
 SELECT *
-FROM ecommerce-dataset
+FROM ecommerce-dataset(2)
 WHERE TotalAmount <> (Quantity * Price);
